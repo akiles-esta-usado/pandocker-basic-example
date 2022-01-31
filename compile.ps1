@@ -19,5 +19,7 @@ $files = @(
     "metadata.yml"
 );
 
-invoke-expression "pandocker --from $($files -join ' ') -o definitive_test.pdf --from markdown --template eisvogel --listings --number-sections --toc"
+$docName = "out"
+
+invoke-expression "pandocker --from $($files -join ' ') -o build/${docName}.pdf --from markdown --template eisvogel --listings --number-sections --toc"
 
